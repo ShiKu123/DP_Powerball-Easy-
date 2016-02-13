@@ -11,7 +11,8 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static int lotSize = 99;
+    public static int ballNumSize = 69;
+    public static int powerBallNumSize = 26;
     public static Random rand = new Random();
     public static ArrayList<Integer> powerBallNumbers = new ArrayList<>();
     public static ArrayList<Integer> powerBallTicketGenerator = new ArrayList<>();
@@ -37,11 +38,10 @@ public class Main {
         System.out.print("The winning numbers are: ");
         // loop to generate non-PowerBall balls
         for (int i = 0; i < 5; i++){
-            powerBallNumbers.add(rand.nextInt(lotSize)+1); // adds randomly generated numbers to array list.
+            powerBallNumbers.add(rand.nextInt(ballNumSize)+1); // adds randomly generated numbers to array list.
         }
-
         // generates PowerBall ball and adds to same array list.
-        powerBallNumbers.add(rand.nextInt(lotSize)+1);
+        powerBallNumbers.add(rand.nextInt(powerBallNumSize)+1);
 
         for (Integer powerBallNumber : powerBallNumbers) {
             strPowerBall = strPowerBall + powerBallNumber.toString() + " ";
@@ -56,9 +56,11 @@ public class Main {
     public static void ticketGenerator(){
         powerBallTicketGenerator.clear();
         ticketBall = "";
-        for (int i = 0; i < 6; i++){
-            powerBallTicketGenerator.add(rand.nextInt(lotSize)+1); // adds randomly generated numbers to array list.
+        for (int i = 0; i < 5; i++){
+            powerBallTicketGenerator.add(rand.nextInt(ballNumSize)+1); // adds randomly generated numbers to array list.
         }
+        // adds teh power ball number to the end of the array list.
+        powerBallTicketGenerator.add(rand.nextInt(powerBallNumSize)+1);
         for (Integer ticketBallNum : powerBallTicketGenerator) {
             ticketBall = ticketBall + ticketBallNum.toString() + " ";
         }
