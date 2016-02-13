@@ -11,8 +11,8 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static int ballNumSize = 69;
-    public static int powerBallNumSize = 26;
+    public static int ballNumSize = 69;         // do not change. Would have been FINAL int, except had to manipulate.
+    public static int powerBallNumSize = 26;    // do not change. Would have been FINAL int, except had to manipulate.
     public static Random rand = new Random();
     public static ArrayList<Integer> powerBallNumbers = new ArrayList<>();
     public static ArrayList<Integer> powerBallTicketGenerator = new ArrayList<>();
@@ -23,19 +23,19 @@ public class Main {
     public static void main(String[] args) {
         int ticketCounter = 1;
         powerBallGenerate();
+        System.out.println("The winning Numbers are: " + strPowerBall);
         do{
             ticketGenerator();
-            //System.out.printf("Ticket #: %10d Played Numbers: %10s\n", ticketCounter, ticketBall);
+            //System.out.printf("Ticket #: %10d Played Numbers: %10s\n", ticketCounter, ticketBall); // displays tiket# and generated powerball ticket numbers each try of a ticket.
             ticketCounter++;
         }while(!winningTicket());
-        System.out.printf("Ticket #: %2d Played Numbers: %10s\n", ticketCounter, ticketBall);
+        System.out.printf("Ticket #: %2d Played Numbers: %10s\n", ticketCounter, ticketBall); // displays tiket# and generated powerball ticket numbers when found ticket match
     }
 
     /*
     Generator methods for PowerBall numbers and played ticket numbers.
      */
     public static void powerBallGenerate(){
-        System.out.print("The winning numbers are: ");
         // loop to generate non-PowerBall balls
         for (int i = 0; i < 5; i++){
             powerBallNumbers.add(rand.nextInt(ballNumSize)+1); // adds randomly generated numbers to array list.
@@ -46,7 +46,6 @@ public class Main {
         for (Integer powerBallNumber : powerBallNumbers) {
             strPowerBall = strPowerBall + powerBallNumber.toString() + " ";
         }
-        System.out.println(strPowerBall);
     }
 
     /*
