@@ -11,7 +11,7 @@ import java.util.ArrayList;
 
 public class Main {
 
-    public static int lotSize = 5;
+    public static int lotSize = 99;
     public static Random rand = new Random();
     public static ArrayList<Integer> powerBallNumbers = new ArrayList<>();
     public static ArrayList<Integer> powerBallTicketGenerator = new ArrayList<>();
